@@ -1,0 +1,180 @@
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== CORPO DA PÁGINA ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #0a1a2f 0%, #050b16 70%);
+  color: #e8eef7;
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  text-align: center;
+  padding: 24px 16px;
+  border-bottom: 2px solid #c9a227; /* dourado */
+  margin-bottom: 28px;
+}
+
+.cabecalho h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(201, 162, 39, 0.5);
+}
+
+.subtitulo {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #c9a227; /* dourado */
+  letter-spacing: 1px;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card {
+  /* Efeito de vidro (glassmorphism) */
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 162, 39, 0.6); /* borda dourada */
+  border-radius: 14px;
+  padding: 18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+}
+
+.card h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c9a227; /* dourado */
+  margin-bottom: 8px;
+}
+
+.card .valor {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.card .detalhe {
+  font-size: 0.8rem;
+  color: #a9b7c9;
+  margin-top: 4px;
+}
+
+/* ===== TABELA ===== */
+.tabela-container h2 {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  color: #ffffff;
+  border-left: 4px solid #c9a227;
+  padding-left: 10px;
+}
+
+.tabela-responsiva {
+  overflow-x: auto; /* permite rolar no celular */
+  border-radius: 14px;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px; /* garante legibilidade no celular */
+}
+
+thead {
+  background: rgba(10, 26, 47, 0.9);
+}
+
+th {
+  padding: 12px 10px;
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c9a227; /* dourado */
+  border-bottom: 2px solid rgba(201, 162, 39, 0.5);
+}
+
+td {
+  padding: 12px 10px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e8eef7;
+}
+
+tbody tr:hover {
+  background: rgba(201, 162, 39, 0.08);
+}
+
+/* Cores das situações */
+.situacao-bom {
+  color: #4ade80; /* verde */
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #f87171; /* vermelho suave */
+  font-weight: bold;
+}
+
+.situacao-sem-nota {
+  color: #a9b7c9; /* cinza claro */
+  font-style: italic;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  margin-top: 32px;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #6b7a90;
+  border-top: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 600px) {
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+
+  .card .valor {
+    font-size: 1.3rem;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+}
