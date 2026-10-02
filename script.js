@@ -1,85 +1,70 @@
 /* =========================================================
    DADOS BRUTOS (fictícios) — 8º Ano
-   Aqui os valores vêm em formatos diferentes de propósito,
-   para treinarmos a normalização.
+   Notas em formatos diferentes de propósito, para treinar
+   a normalização. Faltas dos 3 trimestres (3º = 0).
    ========================================================= */
 const disciplinas = [
-  { disciplina: "Língua Portuguesa", tri1: 82, tri2: "7,8", tri3: 85, faltas: [2, 1, 1] },
-  { disciplina: "Matemática", tri1: 52, tri2: "5,8", tri3: null, faltas: [3, 2, 1] },
-  { disciplina: "Ciências", tri1: "8,1", tri2: 76, tri3: 8.0, faltas: [1, 2, 0] },
-  { disciplina: "História", tri1: 7.0, tri2: 84, tri3: null, faltas: [1, 1, 1] },
-  { disciplina: "Geografia", tri1: 68, tri2: 7.3, tri3: "7,9", faltas: [0, 1, 1] },
-  { disciplina: "Língua Inglesa", tri1: 86, tri2: "8,1", tri3: 8.7, faltas: [1, 0, 0] },
-  { disciplina: "Arte", tri1: 9.0, tri2: 92, tri3: null, faltas: [1, 1, 0] },
-  { disciplina: "Educação Física", tri1: 95, tri2: 9.0, tri3: "9,4", faltas: [0, 1, 0] },
-  { disciplina: "Educação Digital", tri1: 88, tri2: 9.1, tri3: 93, faltas: [1, 0, 1] },
-  { disciplina: "Educação Financeira", tri1: 74, tri2: "7,8", tri3: null, faltas: [1, 1, 1] },
-  { disciplina: "Estudo Orientado", tri1: 8.0, tri2: 83, tri3: "8,5", faltas: [0, 1, 0] },
-  { disciplina: "Redação e Leitura", tri1: 62, tri2: "6,8", tri3: null, faltas: [2, 1, 1] },
-  { disciplina: "Pensamento Lógico", tri1: 48, tri2: 5.6, tri3: "6,0", faltas: [2, 2, 1] },
-  { disciplina: "Literatura Arte e Movimento", tri1: "7,7", tri2: 80, tri3: null, faltas: [1, 0, 1] },
-  { disciplina: "Práticas Experimentais", tri1: 58, tri2: "6,2", tri3: 6.4, faltas: [1, 1, 1] }
+  { disciplina: "Língua Portuguesa", tri1: 8.8, tri2: "8,1", tri3: null, faltas: [4, 9, 0] },
+  { disciplina: "Matemática", tri1: 8.5, tri2: "8,3", tri3: null, faltas: [4, 13, 0] },
+  { disciplina: "Ciências", tri1: 9.1, tri2: "10,0", tri3: null, faltas: [4, 6, 0] },
+  { disciplina: "História", tri1: 7.8, tri2: "7,8", tri3: null, faltas: [5, 7, 0] },
+  { disciplina: "Geografia", tri1: 7.3, tri2: "7,9", tri3: null, faltas: [0, 9, 0] },
+  { disciplina: "Língua Inglesa", tri1: 9.3, tri2: "10,0", tri3: null, faltas: [4, 5, 0] },
+  { disciplina: "Arte", tri1: 7.4, tri2: "8,4", tri3: null, faltas: [1, 7, 0] },
+  { disciplina: "Educação Física", tri1: 10.0, tri2: "9,0", tri3: null, faltas: [2, 5, 0] },
+  { disciplina: "Educação Digital", tri1: 10.0, tri2: "10,0", tri3: null, faltas: [3, 4, 0] },
+  { disciplina: "Educação Financeira", tri1: 10.0, tri2: "10,0", tri3: null, faltas: [3, 8, 0] },
+  { disciplina: "Estudo Orientado", tri1: 7.8, tri2: "9,2", tri3: null, faltas: [2, 6, 0] },
+  { disciplina: "Redação e Leitura", tri1: 8.7, tri2: "8,7", tri3: null, faltas: [0, 6, 0] },
+  { disciplina: "Pensamento Lógico", tri1: 10.0, tri2: "10,0", tri3: null, faltas: [1, 4, 0] },
+  { disciplina: "Literatura Arte e Movimento", tri1: 7.9, tri2: "8,1", tri3: null, faltas: [0, 0, 0] },
+  { disciplina: "Práticas Experimentais", tri1: 8.0, tri2: "10,0", tri3: null, faltas: [0, 4, 0] }
 ];
 
 /* =========================================================
    FUNÇÃO: normalizarNota
    Converte qualquer nota para a escala 0 a 10.
-   Regras:
-   - vazio / null / undefined  -> null (nota ainda não lançada)
-   - entre 0 e 10              -> mantém igual
-   - maior que 10 e até 100    -> divide por 10
-   - aceita ponto e vírgula    -> troca "," por "."
-   - valores inválidos         -> null (não entram na média)
    ========================================================= */
 function normalizarNota(valor) {
-  // Verifica se está vazio, null ou undefined
   if (valor === null || valor === undefined || valor === "") {
-    return null; // nota ainda não lançada
+    return null;
   }
 
-  // Se for texto, troca vírgula por ponto
   let numero = valor;
   if (typeof valor === "string") {
     numero = parseFloat(valor.replace(",", "."));
   }
 
-  // Se não for um número válido, retorna null
   if (isNaN(numero)) {
     return null;
   }
 
-  // Aplica as regras de escala
   if (numero >= 0 && numero <= 10) {
-    return numero; // já está na escala 0–10
+    return numero;
   } else if (numero > 10 && numero <= 100) {
-    return numero / 10; // converte para 0–10 (ex.: 82 -> 8.2)
+    return numero / 10;
   } else {
-    return null; // fora das regras = inválido
+    return null;
   }
 }
 
 /* =========================================================
    FUNÇÃO: calcularMedia
-   Calcula a média usando SOMENTE as notas disponíveis.
-   Nota ausente NUNCA vira zero.
+   Média usando SOMENTE as notas disponíveis.
    ========================================================= */
 function calcularMedia(notas) {
-  // Filtra só as notas válidas (que não são null)
   const validas = notas.filter((n) => n !== null);
 
-  // Se não houver nenhuma nota, não há média
   if (validas.length === 0) {
     return null;
   }
 
-  // Soma todas e divide pela quantidade
   const soma = validas.reduce((acc, n) => acc + n, 0);
   return soma / validas.length;
 }
 
 /* =========================================================
    FUNÇÃO: definirSituacao
-   Define a situação com base na média disponível.
    ========================================================= */
 function definirSituacao(media) {
   if (media === null) {
@@ -93,7 +78,6 @@ function definirSituacao(media) {
 
 /* =========================================================
    FUNÇÃO: formatarNota
-   Mostra a nota com 1 casa decimal ou "—" se não houver.
    ========================================================= */
 function formatarNota(nota) {
   if (nota === null) {
@@ -104,7 +88,6 @@ function formatarNota(nota) {
 
 /* =========================================================
    FUNÇÃO: somarFaltas
-   Soma as faltas dos três trimestres.
    ========================================================= */
 function somarFaltas(faltas) {
   return faltas.reduce((acc, f) => acc + f, 0);
@@ -112,32 +95,23 @@ function somarFaltas(faltas) {
 
 /* =========================================================
    PREENCHER A TABELA
-   Percorre cada disciplina, normaliza, calcula e cria a linha.
    ========================================================= */
 function preencherTabela() {
   const corpo = document.getElementById("corpoTabela");
 
   disciplinas.forEach((d) => {
-    // Normaliza as três notas
     const n1 = normalizarNota(d.tri1);
     const n2 = normalizarNota(d.tri2);
     const n3 = normalizarNota(d.tri3);
 
-    // Calcula a média apenas com as notas disponíveis
     const media = calcularMedia([n1, n2, n3]);
-
-    // Soma as faltas
     const totalFaltas = somarFaltas(d.faltas);
-
-    // Define a situação
     const situacao = definirSituacao(media);
 
-    // Define a classe CSS da situação
     let classeSituacao = "situacao-sem-nota";
     if (situacao === "Bom desempenho") classeSituacao = "situacao-bom";
     if (situacao === "Atenção") classeSituacao = "situacao-atencao";
 
-    // Cria a linha da tabela
     const linha = document.createElement("tr");
     linha.innerHTML = `
       <td>${d.disciplina}</td>
@@ -154,12 +128,10 @@ function preencherTabela() {
 
 /* =========================================================
    PREENCHER OS CARDS DE RESUMO
-   Calcula média geral, total de faltas, bons desempenhos, etc.
    ========================================================= */
 function preencherCards() {
   const container = document.getElementById("cardsResumo");
 
-  // Vamos juntar as médias de cada disciplina
   const medias = [];
   let totalFaltas = 0;
   let bons = 0;
@@ -180,7 +152,6 @@ function preencherCards() {
     totalFaltas += somarFaltas(d.faltas);
   });
 
-  // Média geral (somente das disciplinas com nota)
   const mediaGeral =
     medias.length > 0
       ? medias.reduce((acc, m) => acc + m, 0) / medias.length
@@ -190,7 +161,6 @@ function preencherCards() {
   // No futuro será tratada de outra forma (não calculada a partir das faltas).
   const frequenciaDemonstrativa = 92;
 
-  // Monta os cards
   const cards = [
     {
       titulo: "Média Geral",
@@ -219,7 +189,6 @@ function preencherCards() {
     }
   ];
 
-  // Cria cada card no HTML
   cards.forEach((c) => {
     const div = document.createElement("div");
     div.className = "card";
@@ -234,7 +203,6 @@ function preencherCards() {
 
 /* =========================================================
    INICIALIZAÇÃO
-   Executa as funções quando a página terminar de carregar.
    ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
   preencherCards();
