@@ -605,7 +605,7 @@ const COR_GRADE = "rgba(201, 162, 39, 0.18)";
 const COR_PERIGO = "#f87171";
 const COR_VERDE = "#4ade80";
 
-const LIMITE_INTERNO_FALTAS = 350;
+const LIMITE_INTERNO_FALTAS = 315;
 
 function calcularMediaDisciplina(d) {
   const n1 = normalizarNota(d.tri1);
@@ -798,7 +798,7 @@ function atualizarGraficoFaltas() {
     graficoFaltas = null;
   }
 
-  const { t1, t2, t3, total } = calcularFaltasTrimestrais();
+  const { total } = calcularFaltasTrimestrais();
 
   const card = document.getElementById("graficoCardFaltas");
   const estado = document.getElementById("estadoFaltas");
@@ -814,17 +814,17 @@ function atualizarGraficoFaltas() {
   graficoFaltas = new Chart(canvas.getContext("2d"), {
     type: "bar",
     data: {
-      labels: ["1º Tri", "2º Tri", "3º Tri"],
+      labels: ["Ano"],
       datasets: [
         {
           label: "Faltas",
-          data: [t1, t2, t3],
+          data: [total],
           backgroundColor: COR_DOURADO_SUAVE,
           borderColor: COR_DOURADO,
           borderWidth: 1,
           borderRadius: 6,
-          barPercentage: 0.65,
-          categoryPercentage: 0.75
+          barPercentage: 0.55,
+          categoryPercentage: 0.7
         }
       ]
     },
@@ -843,7 +843,7 @@ function atualizarGraficoFaltas() {
           callbacks: {
             label: (ctx) => {
               const v = ctx.parsed.y;
-              return v + " falta" + (v === 1 ? "" : "s");
+              return "Total: " + v + " falta" + (v === 1 ? "" : "s");
             }
           }
         }
