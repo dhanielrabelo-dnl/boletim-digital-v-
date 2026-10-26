@@ -246,7 +246,7 @@ tbody tr:hover {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, #c9a227, #a8851a);
+  background: linear-gradient(135deg, #c9a227, #fdbe00);
   color: #0a1a2f;
   font-weight: bold;
   font-size: 1rem;
@@ -305,7 +305,7 @@ tbody tr:hover {
 }
 
 #botaoSalvar {
-  background: linear-gradient(135deg, #c9a227, #a8851a);
+  background: linear-gradient(135deg, #ffcf32, #bd910d);
   color: #0a1a2f;
   border: none;
 }
@@ -345,7 +345,7 @@ td input.campo-edicao {
 }
 
 td input.campo-edicao:focus {
-  border-color: #c9a227;
+  border-color: #ffc400;
   box-shadow: 0 0 8px rgba(201, 162, 39, 0.4);
 }
 
