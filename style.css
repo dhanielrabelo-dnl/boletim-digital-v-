@@ -354,3 +354,101 @@ td input.campo-edicao.invalido {
   box-shadow: 0 0 8px rgba(248, 113, 113, 0.5);
   background: rgba(248, 113, 113, 0.1);
 }
+
+/* ===== ÁREA DE GRÁFICOS (acrescentado) ===== */
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.grafico-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 162, 39, 0.6);
+  border-radius: 14px;
+  padding: 18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.grafico-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+}
+
+.grafico-card h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c9a227;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+}
+
+.grafico-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Card de faltas: altura maior para média por disciplina (15 linhas) */
+.area-graficos > .grafico-card:first-child .grafico-container {
+  height: 320px;
+}
+
+/* Estado de perigo */
+#estadoFaltas {
+  min-height: 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #f87171;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+#estadoFaltas:empty {
+  display: none;
+}
+
+.grafico-card.perigo {
+  border-color: #f87171;
+  box-shadow: 0 4px 20px rgba(248, 113, 113, 0.35);
+}
+
+.grafico-card.perigo h2 {
+  color: #f87171;
+}
+
+/* ===== RESPONSIVIDADE DOS GRÁFICOS ===== */
+@media (max-width: 980px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .area-graficos {
+    grid-template-columns: 1fr;
+  }
+
+  .grafico-container {
+    height: 240px;
+  }
+
+  .area-graficos > .grafico-card:first-child .grafico-container {
+    height: 340px;
+  }
+}
