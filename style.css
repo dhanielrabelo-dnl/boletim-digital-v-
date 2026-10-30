@@ -19,7 +19,7 @@ body {
 .cabecalho {
   text-align: center;
   padding: 24px 16px;
-  border-bottom: 2px solid #c9a227; /* dourado */
+  border-bottom: 2px solid #ff7a1a;
   margin-bottom: 28px;
 }
 
@@ -27,13 +27,13 @@ body {
   font-size: 2rem;
   letter-spacing: 2px;
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(201, 162, 39, 0.5);
+  text-shadow: 0 0 12px rgba(255, 122, 26, 0.55);
 }
 
 .subtitulo {
   margin-top: 6px;
   font-size: 1rem;
-  color: #c9a227; /* dourado */
+  color: #ff7a1a;
   letter-spacing: 1px;
 }
 
@@ -52,9 +52,8 @@ body {
 }
 
 .card {
-  /* Efeito de vidro (glassmorphism) */
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 162, 39, 0.6); /* borda dourada */
+  border: 1px solid rgba(255, 122, 26, 0.65);
   border-radius: 14px;
   padding: 18px;
   backdrop-filter: blur(8px);
@@ -65,14 +64,14 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+  box-shadow: 0 8px 24px rgba(255, 122, 26, 0.45);
 }
 
 .card h3 {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #c9a227; /* dourado */
+  color: #ff7a1a;
   margin-bottom: 8px;
 }
 
@@ -93,14 +92,14 @@ body {
   font-size: 1.3rem;
   margin-bottom: 14px;
   color: #ffffff;
-  border-left: 4px solid #c9a227;
+  border-left: 4px solid #ff7a1a;
   padding-left: 10px;
 }
 
 .tabela-responsiva {
-  overflow-x: auto; /* permite rolar no celular */
+  overflow-x: auto;
   border-radius: 14px;
-  border: 1px solid rgba(201, 162, 39, 0.4);
+  border: 1px solid rgba(255, 122, 26, 0.45);
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -109,7 +108,7 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px; /* garante legibilidade no celular */
+  min-width: 720px;
 }
 
 thead {
@@ -122,8 +121,8 @@ th {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #c9a227; /* dourado */
-  border-bottom: 2px solid rgba(201, 162, 39, 0.5);
+  color: #ff7a1a;
+  border-bottom: 2px solid rgba(255, 122, 26, 0.55);
 }
 
 td {
@@ -134,22 +133,22 @@ td {
 }
 
 tbody tr:hover {
-  background: rgba(201, 162, 39, 0.08);
+  background: rgba(255, 122, 26, 0.10);
 }
 
 /* Cores das situações */
 .situacao-bom {
-  color: #4ade80; /* verde */
+  color: #4ade80;
   font-weight: bold;
 }
 
 .situacao-atencao {
-  color: #f87171; /* vermelho suave */
+  color: #f87171;
   font-weight: bold;
 }
 
 .situacao-sem-nota {
-  color: #a9b7c9; /* cinza claro */
+  color: #a9b7c9;
   font-style: italic;
 }
 
@@ -160,7 +159,7 @@ tbody tr:hover {
   padding: 16px;
   font-size: 0.8rem;
   color: #6b7a90;
-  border-top: 1px solid rgba(201, 162, 39, 0.3);
+  border-top: 1px solid rgba(255, 122, 26, 0.35);
 }
 
 /* ===== AJUSTES PARA CELULAR ===== */
@@ -179,13 +178,13 @@ tbody tr:hover {
   }
 }
 
-/* ===== TELA DE ACESSO POR PIN (acrescentado) ===== */
+/* ===== TELA DE ACESSO POR PIN ===== */
 .acesso {
   max-width: 420px;
   margin: 0 auto 32px;
   padding: 24px;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 162, 39, 0.6);
+  border: 1px solid rgba(255, 122, 26, 0.65);
   border-radius: 14px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -207,7 +206,7 @@ tbody tr:hover {
 }
 
 .acesso-info strong {
-  color: #c9a227;
+  color: #ff7a1a;
 }
 
 .acesso-form {
@@ -221,13 +220,13 @@ tbody tr:hover {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #c9a227;
+  color: #ff7a1a;
 }
 
 .acesso-form input {
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid rgba(201, 162, 39, 0.6);
+  border: 1px solid rgba(255, 122, 26, 0.65);
   background: rgba(10, 26, 47, 0.6);
   color: #ffffff;
   font-size: 1rem;
@@ -237,8 +236,8 @@ tbody tr:hover {
 }
 
 .acesso-form input:focus {
-  border-color: #c9a227;
-  box-shadow: 0 0 10px rgba(201, 162, 39, 0.4);
+  border-color: #ff7a1a;
+  box-shadow: 0 0 10px rgba(255, 122, 26, 0.55);
 }
 
 .acesso-form button {
@@ -246,7 +245,7 @@ tbody tr:hover {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, #c9a227, #fdbe00);
+  background: linear-gradient(135deg, #ff7a1a, #e05e00);
   color: #0a1a2f;
   font-weight: bold;
   font-size: 1rem;
@@ -256,7 +255,7 @@ tbody tr:hover {
 
 .acesso-form button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(201, 162, 39, 0.4);
+  box-shadow: 0 6px 18px rgba(255, 122, 26, 0.55);
 }
 
 .acesso-form button:disabled {
@@ -277,7 +276,7 @@ tbody tr:hover {
   color: #4ade80;
 }
 
-/* ===== CONTROLES DE EDIÇÃO (acrescentado) ===== */
+/* ===== CONTROLES DE EDIÇÃO ===== */
 .controles {
   display: flex;
   flex-wrap: wrap;
@@ -289,7 +288,7 @@ tbody tr:hover {
 .controles button {
   padding: 12px 20px;
   border-radius: 10px;
-  border: 1px solid rgba(201, 162, 39, 0.6);
+  border: 1px solid rgba(255, 122, 26, 0.65);
   cursor: pointer;
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
@@ -301,11 +300,11 @@ tbody tr:hover {
 
 .controles button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(201, 162, 39, 0.3);
+  box-shadow: 0 6px 18px rgba(255, 122, 26, 0.45);
 }
 
 #botaoSalvar {
-  background: linear-gradient(135deg, #ffcf32, #bd910d);
+  background: linear-gradient(135deg, #ff7a1a, #e05e00);
   color: #0a1a2f;
   border: none;
 }
@@ -330,12 +329,12 @@ tbody tr:hover {
   color: #4ade80;
 }
 
-/* ===== CAMPOS DE EDIÇÃO DENTRO DA TABELA (acrescentado) ===== */
+/* ===== CAMPOS DE EDIÇÃO DENTRO DA TABELA ===== */
 td input.campo-edicao {
   width: 70px;
   padding: 6px 8px;
   border-radius: 8px;
-  border: 1px solid rgba(201, 162, 39, 0.6);
+  border: 1px solid rgba(255, 122, 26, 0.65);
   background: rgba(10, 26, 47, 0.7);
   color: #ffffff;
   font-size: 0.85rem;
@@ -345,8 +344,8 @@ td input.campo-edicao {
 }
 
 td input.campo-edicao:focus {
-  border-color: #ffc400;
-  box-shadow: 0 0 8px rgba(201, 162, 39, 0.4);
+  border-color: #ff7a1a;
+  box-shadow: 0 0 8px rgba(255, 122, 26, 0.55);
 }
 
 td input.campo-edicao.invalido {
@@ -355,7 +354,7 @@ td input.campo-edicao.invalido {
   background: rgba(248, 113, 113, 0.1);
 }
 
-/* ===== ÁREA DE GRÁFICOS (acrescentado) ===== */
+/* ===== ÁREA DE GRÁFICOS ===== */
 .area-graficos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -365,7 +364,7 @@ td input.campo-edicao.invalido {
 
 .grafico-card {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 162, 39, 0.6);
+  border: 1px solid rgba(255, 122, 26, 0.65);
   border-radius: 14px;
   padding: 18px;
   backdrop-filter: blur(8px);
@@ -379,14 +378,14 @@ td input.campo-edicao.invalido {
 
 .grafico-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+  box-shadow: 0 8px 24px rgba(255, 122, 26, 0.45);
 }
 
 .grafico-card h2 {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #c9a227;
+  color: #ff7a1a;
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -403,12 +402,10 @@ td input.campo-edicao.invalido {
   height: 100% !important;
 }
 
-/* Card de faltas: altura maior para média por disciplina (15 linhas) */
 .area-graficos > .grafico-card:first-child .grafico-container {
   height: 320px;
 }
 
-/* Estado de perigo */
 #estadoFaltas {
   min-height: 0;
   font-size: 0.85rem;
@@ -451,4 +448,44 @@ td input.campo-edicao.invalido {
   .area-graficos > .grafico-card:first-child .grafico-container {
     height: 340px;
   }
+}
+
+/* =========================================================
+   EFEITO DOURADO — disciplina com nota máxima no ano (30,0)
+   ========================================================= */
+tr.linha-perfeita {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.10) 0%,
+    rgba(255, 215, 0, 0.04) 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 215, 0, 0.35);
+}
+
+tr.linha-perfeita:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.18) 0%,
+    rgba(255, 215, 0, 0.08) 100%
+  );
+}
+
+tr.linha-perfeita td:first-child {
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.55);
+}
+
+.badge-perfeita {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #0a1a2f;
+  background: linear-gradient(135deg, #ffe066, #ffd700);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.65);
+  vertical-align: middle;
 }
